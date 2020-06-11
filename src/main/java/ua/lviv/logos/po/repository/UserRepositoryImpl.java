@@ -69,8 +69,6 @@ public class UserRepositoryImpl implements UserRepository {
         List<User> result = new ArrayList<>();
         try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM user");
              ResultSet resultSet = statement.executeQuery();) {
-            System.out.println(resultSet);
-
             while (resultSet.next()) {
                 User user = new User();
                 user.setId(resultSet.getInt("id"));
